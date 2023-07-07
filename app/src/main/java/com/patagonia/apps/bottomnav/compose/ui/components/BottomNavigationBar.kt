@@ -5,12 +5,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.patagonia.apps.bottomnav.compose.ui.navigation.Destinations
+import com.patagonia.apps.bottomnav.compose.ui.navigation.currentRoute
 
 @Composable
 fun BottomNavigationApp(
@@ -40,10 +39,4 @@ fun BottomNavigationApp(
             )
         }
     }
-}
-
-@Composable
-private fun currentRoute(navController: NavHostController): String? {
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    return navBackStackEntry?.destination?.route
 }
